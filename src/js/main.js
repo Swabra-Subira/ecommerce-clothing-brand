@@ -67,7 +67,7 @@ export function productCardHTML(product) {
     : "";
   return `
     <div class="product-card" data-id="${product.id}" role="article" tabindex="0"
-         aria-label="${product.name}, $${product.price.toFixed(2)}">
+         aria-label="${product.name}, KSh ${product.price.toLocaleString()}">
       <div class="product-card__img-wrap">
         ${badge}
         <img src="${product.image}" alt="${product.name}" loading="lazy">
@@ -75,7 +75,7 @@ export function productCardHTML(product) {
       <div class="product-card__body">
         <p class="product-card__category">${product.category}</p>
         <h3 class="product-card__name">${product.name}</h3>
-        <p class="product-card__price">$${product.price.toFixed(2)}</p>
+        <p class="product-card__price">KSh ${product.price.toLocaleString()}</p>
         <button class="btn btn--primary btn--sm btn--full add-to-cart-btn"
                 data-id="${product.id}" aria-label="Add ${product.name} to cart">
           Add to Cart

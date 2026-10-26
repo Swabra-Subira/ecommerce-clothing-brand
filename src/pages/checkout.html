@@ -159,15 +159,15 @@
           <div id="checkout-items" style="margin-bottom:1rem"></div>
           <div class="summary-row">
             <span>Subtotal</span>
-            <span id="co-subtotal">$0.00</span>
+            <span id="co-subtotal">KSh 0</span>
           </div>
           <div class="summary-row">
             <span>Shipping</span>
-            <span>$5.00</span>
+            <span>KSh 500</span>
           </div>
           <div class="summary-row summary-row--total">
             <span>Total</span>
-            <span id="co-total">$5.00</span>
+            <span id="co-total">KSh 500</span>
           </div>
         </aside>
       </div>
@@ -185,7 +185,7 @@
   <script type="module">
     import { getCart, getSubtotal, clearCart, updateCartBadge } from "../js/cart.js";
 
-    const SHIPPING = 5;
+    const SHIPPING = 500;
 
     document.addEventListener("DOMContentLoaded", () => {
       updateCartBadge();
@@ -209,12 +209,12 @@
       itemsEl.innerHTML = cart.map(item => `
         <div class="summary-row" style="align-items:flex-start">
           <span style="flex:1">${item.name} <span style="color:var(--color-muted);font-size:0.8rem">×${item.qty}</span></span>
-          <span>$${(item.price * item.qty).toFixed(2)}</span>
+          <span>KSh ${(item.price * item.qty).toLocaleString()}</span>
         </div>`).join("") || "<p style='color:var(--color-muted);font-size:0.85rem'>Cart is empty.</p>";
 
       const sub = getSubtotal();
-      document.getElementById("co-subtotal").textContent = `$${sub.toFixed(2)}`;
-      document.getElementById("co-total").textContent    = `$${(sub + SHIPPING).toFixed(2)}`;
+      document.getElementById("co-subtotal").textContent = `KSh ${sub.toLocaleString()}`;
+      document.getElementById("co-total").textContent    = `KSh ${(sub + SHIPPING).toLocaleString()}`;
     }
 
     function bindFormValidation() {

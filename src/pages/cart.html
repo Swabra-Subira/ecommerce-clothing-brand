@@ -95,15 +95,15 @@
           <h3>Order Summary</h3>
           <div class="summary-row">
             <span>Subtotal</span>
-            <span id="subtotal">$0.00</span>
+            <span id="subtotal">KSh 0</span>
           </div>
           <div class="summary-row">
             <span>Shipping</span>
-            <span id="shipping">$5.00</span>
+            <span id="shipping">KSh 500</span>
           </div>
           <div class="summary-row summary-row--total">
             <span>Total</span>
-            <span id="total">$5.00</span>
+            <span id="total">KSh 500</span>
           </div>
           <a href="checkout.html" class="btn btn--accent btn--full" style="margin-top:1.5rem">
             Proceed to Checkout
@@ -158,7 +158,7 @@
     import { getCart, updateQty, removeFromCart, getSubtotal, updateCartBadge } from "../js/cart.js";
     import { initMobileMenu } from "../js/main.js";
 
-    const SHIPPING = 5;
+    const SHIPPING = 500;
 
     function render() {
       updateCartBadge();
@@ -186,7 +186,7 @@
               </div>
             </div>
           </td>
-          <td>$${item.price.toFixed(2)}</td>
+          <td>KSh ${item.price.toLocaleString()}</td>
           <td>
             <div class="qty-stepper">
               <button onclick="changeQty(${i}, ${item.qty - 1})" aria-label="Decrease quantity">−</button>
@@ -196,7 +196,7 @@
               <button onclick="changeQty(${i}, ${item.qty + 1})" aria-label="Increase quantity">+</button>
             </div>
           </td>
-          <td><strong>$${(item.price * item.qty).toFixed(2)}</strong></td>
+          <td><strong>KSh ${(item.price * item.qty).toLocaleString()}</strong></td>
           <td>
             <button class="remove-btn" onclick="remove(${i})" aria-label="Remove ${item.name} from cart">
               Remove
@@ -206,8 +206,8 @@
       `).join("");
 
       const subtotal = getSubtotal();
-      document.getElementById("subtotal").textContent = `$${subtotal.toFixed(2)}`;
-      document.getElementById("total").textContent    = `$${(subtotal + SHIPPING).toFixed(2)}`;
+      document.getElementById("subtotal").textContent = `KSh ${subtotal.toLocaleString()}`;
+      document.getElementById("total").textContent    = `KSh ${(subtotal + SHIPPING).toLocaleString()}`;
     }
 
     window.changeQty = (i, qty) => { updateQty(i, qty); render(); };

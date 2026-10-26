@@ -41,7 +41,7 @@ function renderProduct(p) {
   // Info
   document.getElementById("product-category").textContent = p.category;
   document.getElementById("product-name").textContent     = p.name;
-  document.getElementById("product-price").textContent    = `$${p.price.toFixed(2)}`;
+  document.getElementById("product-price").textContent    = `KSh ${p.price.toLocaleString()}`;
   document.getElementById("product-desc").textContent     = p.description;
 
   // Sizes
