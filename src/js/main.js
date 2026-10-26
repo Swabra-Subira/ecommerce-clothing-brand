@@ -1,8 +1,8 @@
 // ============================================================
 // main.js — Shared logic: nav, mobile menu, cart badge
 // ============================================================
-import { updateCartBadge, getCart } from "./cart.js";
-import { getFeaturedProducts } from "./data.js";
+import { updateCartBadge } from "./cart.js";
+import { getFeaturedProducts } from "./store.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();

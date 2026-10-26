@@ -1,7 +1,7 @@
 // ============================================================
 // shop.js — Product rendering, filter, sort logic
 // ============================================================
-import { products, getByCategory } from "./data.js";
+import { getProducts, getByCategory } from "./store.js";
 import { addToCart, updateCartBadge } from "./cart.js";
 import { productCardHTML } from "./main.js";
 
@@ -93,7 +93,7 @@ function bindAddToCart() {
     btn.addEventListener("click", e => {
       e.stopPropagation();
       const id = Number(btn.dataset.id);
-      const product = products.find(p => p.id === id);
+      const product = getProducts().find(p => p.id === id);
       if (!product) return;
       addToCart({
         productId: product.id,

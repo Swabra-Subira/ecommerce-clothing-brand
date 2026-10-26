@@ -1,7 +1,7 @@
 // ============================================================
 // product.js — Product detail page logic
 // ============================================================
-import { getProductById, getRelated } from "./data.js";
+import { getProductById, getRelated } from "./store.js";
 import { addToCart, updateCartBadge } from "./cart.js";
 import { productCardHTML } from "./main.js";
 
@@ -42,7 +42,16 @@ function renderProduct(p) {
   document.getElementById("product-category").textContent = p.category;
   document.getElementById("product-name").textContent     = p.name;
   document.getElementById("product-price").textContent    = `KSh ${p.price.toLocaleString()}`;
-  document.getElementById("product-desc").textContent     = p.description;
+  document.getElementById("product-desc").textContent     = p.fullDescription || p.description;
+
+  // Extra details (material, care)
+  const materialEl = document.getElementById("product-material");
+  const careEl     = document.getElementById("product-care");
+  if (materialEl) materialEl.textContent = p.material || "";
+  if (careEl)     careEl.textContent     = p.care     || "";
+  if (materialEl?.closest(".detail-extra")) {
+    materialEl.closest(".detail-extra").style.display = p.material || p.care ? "block" : "none";
+  }
 
   // Sizes
   const sizeWrap = document.getElementById("size-options");

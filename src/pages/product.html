@@ -105,10 +105,17 @@
           <div style="margin-top:2.5rem">
             <div class="tabs" role="tablist">
               <button class="tab-btn active" data-tab="tab-desc" role="tab" aria-selected="true">Description</button>
+              <button class="tab-btn" data-tab="tab-details" role="tab" aria-selected="false">Details</button>
               <button class="tab-btn" data-tab="tab-reviews" role="tab" aria-selected="false">Reviews</button>
             </div>
             <div id="tab-desc" class="tab-panel active" role="tabpanel">
               <p id="product-desc" style="color:var(--color-muted);line-height:1.8"></p>
+            </div>
+            <div id="tab-details" class="tab-panel" role="tabpanel">
+              <div class="detail-extra">
+                <p style="margin-bottom:.5rem"><strong>Material:</strong> <span id="product-material" style="color:var(--color-muted)"></span></p>
+                <p><strong>Care:</strong> <span id="product-care" style="color:var(--color-muted)"></span></p>
+              </div>
             </div>
             <div id="tab-reviews" class="tab-panel" role="tabpanel">
               <p style="color:var(--color-muted)">No reviews yet. Be the first to review this product.</p>
