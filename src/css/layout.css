@@ -1,0 +1,104 @@
+/* ============================================================
+   LAYOUT.CSS — Container, Grid, Flexbox Utilities
+   ============================================================ */
+
+/* --- Container --- */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--space-lg);
+}
+
+.container--narrow {
+  max-width: 800px;
+  margin-inline: auto;
+  padding-inline: var(--space-lg);
+}
+
+/* --- Section spacing --- */
+.section {
+  padding-block: var(--space-3xl);
+}
+
+.section--sm {
+  padding-block: var(--space-xl);
+}
+
+/* --- Page header --- */
+.page-header {
+  background-color: var(--color-surface);
+  padding-block: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.page-header h1 {
+  margin-bottom: var(--space-xs);
+}
+
+.page-header p {
+  color: var(--color-muted);
+  margin-bottom: 0;
+}
+
+/* --- Product grids --- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.product-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* --- Two column layout --- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.two-col--sidebar {
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-xl);
+}
+
+/* --- Flex utilities --- */
+.flex        { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between{ display: flex; align-items: center; justify-content: space-between; }
+.flex-col    { display: flex; flex-direction: column; }
+.flex-wrap   { flex-wrap: wrap; }
+.gap-sm      { gap: var(--space-sm); }
+.gap-md      { gap: var(--space-md); }
+.gap-lg      { gap: var(--space-lg); }
+
+/* --- Text alignment --- */
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+/* --- Spacing helpers --- */
+.mt-sm  { margin-top: var(--space-sm); }
+.mt-md  { margin-top: var(--space-md); }
+.mt-lg  { margin-top: var(--space-lg); }
+.mt-xl  { margin-top: var(--space-xl); }
+.mb-md  { margin-bottom: var(--space-md); }
+.mb-lg  { margin-bottom: var(--space-lg); }
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 1024px) {
+  .product-grid        { grid-template-columns: repeat(2, 1fr); }
+  .product-grid--4     { grid-template-columns: repeat(2, 1fr); }
+  .two-col--sidebar    { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .container           { padding-inline: var(--space-md); }
+  .product-grid        { grid-template-columns: 1fr; }
+  .product-grid--4     { grid-template-columns: repeat(2, 1fr); }
+  .two-col             { grid-template-columns: 1fr; }
+  .section             { padding-block: var(--space-xl); }
+}

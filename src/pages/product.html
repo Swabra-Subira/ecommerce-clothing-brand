@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Product detail — Clothing Brand">
+  <title>Product — Clothing Brand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo">Cloth<span>Brand</span></a>
+        <ul class="navbar__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar__actions">
+          <a href="cart.html" class="cart-btn" aria-label="Shopping cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-badge hidden" aria-live="polite">0</span>
+          </a>
+          <a href="auth.html" class="btn btn--outline btn--sm">Sign In</a>
+          <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i> Cart</a>
+    <a href="auth.html">Sign In</a>
+  </div>
+
+  <main>
+    <div class="container">
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.65rem"></i>
+        <a href="shop.html">Shop</a>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.65rem"></i>
+        <span id="breadcrumb-name" aria-current="page">Product</span>
+      </nav>
+
+      <!-- Product detail -->
+      <div class="product-detail">
+        <!-- Gallery -->
+        <div class="product-detail__gallery">
+          <img id="product-img" src="" alt="" style="background:#f0ece6">
+        </div>
+
+        <!-- Info panel -->
+        <div class="product-detail__info">
+          <p class="product-detail__category" id="product-category"></p>
+          <h1 class="product-detail__name" id="product-name"></h1>
+          <p class="product-detail__price" id="product-price"></p>
+
+          <!-- Sizes -->
+          <p class="size-label">Select Size</p>
+          <div class="size-options" id="size-options" role="group" aria-label="Available sizes"></div>
+
+          <!-- Colors -->
+          <p class="color-label">
+            Color: <span id="selected-color-name" style="font-weight:400;color:var(--color-muted)"></span>
+          </p>
+          <div class="color-options" id="color-options" role="group" aria-label="Available colors"></div>
+
+          <!-- Quantity -->
+          <p class="size-label">Quantity</p>
+          <div class="qty-stepper" role="group" aria-label="Quantity selector">
+            <button id="qty-minus" aria-label="Decrease quantity">−</button>
+            <input id="qty-input" type="number" value="1" min="1" aria-label="Product quantity">
+            <button id="qty-plus" aria-label="Increase quantity">+</button>
+          </div>
+
+          <!-- CTA buttons -->
+          <div class="detail-actions">
+            <button id="add-to-cart-btn" class="btn btn--outline btn--primary" aria-label="Add to cart">
+              <i class="fa-solid fa-bag-shopping"></i> Add to Cart
+            </button>
+            <button id="buy-now-btn" class="btn btn--accent" aria-label="Buy now">
+              Buy Now
+            </button>
+          </div>
+
+          <!-- Description / Reviews tabs -->
+          <div style="margin-top:2.5rem">
+            <div class="tabs" role="tablist">
+              <button class="tab-btn active" data-tab="tab-desc" role="tab" aria-selected="true">Description</button>
+              <button class="tab-btn" data-tab="tab-reviews" role="tab" aria-selected="false">Reviews</button>
+            </div>
+            <div id="tab-desc" class="tab-panel active" role="tabpanel">
+              <p id="product-desc" style="color:var(--color-muted);line-height:1.8"></p>
+            </div>
+            <div id="tab-reviews" class="tab-panel" role="tabpanel">
+              <p style="color:var(--color-muted)">No reviews yet. Be the first to review this product.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related products -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>You May Also Like</h2>
+        </div>
+        <div class="product-grid product-grid--4" id="related-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand-name">Cloth<span>Brand</span></p>
+          <p class="footer__tagline">Effortlessly stylish clothing for the modern wardrobe.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Shop</p>
+          <ul class="footer__links">
+            <li><a href="shop.html?category=men">Men</a></li>
+            <li><a href="shop.html?category=women">Women</a></li>
+            <li><a href="shop.html?category=accessories">Accessories</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Company</p>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Newsletter</p>
+          <form class="newsletter-form" onsubmit="return false">
+            <input type="email" class="newsletter-input" placeholder="Your email" aria-label="Email address">
+            <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 ClothBrand. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/product.js"></script>
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

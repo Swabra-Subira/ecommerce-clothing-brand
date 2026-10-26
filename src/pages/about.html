@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Clothing Brand — Our story, mission, and the team behind the designs.">
+  <title>About — Clothing Brand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo">Cloth<span>Brand</span></a>
+        <ul class="navbar__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar__actions">
+          <a href="cart.html" class="cart-btn" aria-label="Shopping cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-badge hidden" aria-live="polite">0</span>
+          </a>
+          <a href="auth.html" class="btn btn--outline btn--sm">Sign In</a>
+          <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i> Cart</a>
+    <a href="auth.html">Sign In</a>
+  </div>
+
+  <main>
+    <!-- Hero with brand image -->
+    <div class="about-hero" role="img" aria-label="Brand lifestyle photo">
+      <img src="../../public/images/cbs6.jpeg" alt="ClothBrand lifestyle — effortless fashion" class="about-hero__img">
+      <div class="about-hero__text">
+        <h1>Our Story</h1>
+        <p>Rooted in quality. Driven by style.</p>
+      </div>
+    </div>
+
+    <!-- Brand story -->
+    <section class="section">
+      <div class="container--narrow text-center">
+        <h2>More Than Clothing</h2>
+        <p>
+          ClothBrand was founded with a simple belief: great style shouldn't come at the cost of comfort or conscience.
+          We design pieces that are built to last — classic enough to wear season after season, and versatile enough
+          to move from morning to evening without missing a beat.
+        </p>
+        <p>
+          Every fabric is chosen with care. Every silhouette is refined over dozens of samples. We're not chasing
+          trends — we're building a wardrobe you'll reach for again and again.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission statement -->
+    <section class="section--sm" style="background-color:var(--color-primary)">
+      <div class="container text-center">
+        <p style="font-size:0.8rem;text-transform:uppercase;letter-spacing:3px;color:var(--color-accent);margin-bottom:1rem;font-weight:700">
+          Our Mission
+        </p>
+        <h2 style="color:#fff;max-width:700px;margin-inline:auto;line-height:1.3">
+          "To make effortless, quality clothing accessible to everyone — without compromise."
+        </h2>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>What We Stand For</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2rem" class="team-grid" style="">
+          <div class="team-card" style="text-align:left;padding:2rem">
+            <div style="font-size:2rem;color:var(--color-accent);margin-bottom:1rem">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <h3>Sustainability</h3>
+            <p style="color:var(--color-muted);margin-top:.5rem">
+              Responsible sourcing and ethical manufacturing are not extras — they're built into every decision we make.
+            </p>
+          </div>
+          <div class="team-card" style="text-align:left;padding:2rem">
+            <div style="font-size:2rem;color:var(--color-accent);margin-bottom:1rem">
+              <i class="fa-solid fa-gem"></i>
+            </div>
+            <h3>Quality</h3>
+            <p style="color:var(--color-muted);margin-top:.5rem">
+              We use premium fabrics and rigorous quality control so that every piece that reaches you is made to last.
+            </p>
+          </div>
+          <div class="team-card" style="text-align:left;padding:2rem">
+            <div style="font-size:2rem;color:var(--color-accent);margin-bottom:1rem">
+              <i class="fa-solid fa-people-group"></i>
+            </div>
+            <h3>Inclusivity</h3>
+            <p style="color:var(--color-muted);margin-top:.5rem">
+              Great style belongs to everyone. Our sizing, designs, and pricing are built to reflect that belief.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section" style="background-color:var(--color-surface)">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Meet the Team</h2>
+          <p>The people behind the brand</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card">
+            <img src="../../public/images/cbs5.jpeg" alt="Amara J — Creative Director" class="team-card__avatar">
+            <p class="team-card__name">Amara J.</p>
+            <p class="team-card__role">Creative Director</p>
+          </div>
+          <div class="team-card">
+            <img src="../../public/images/cbs2.jpeg" alt="David K — Head of Design" class="team-card__avatar">
+            <p class="team-card__name">David K.</p>
+            <p class="team-card__role">Head of Design</p>
+          </div>
+          <div class="team-card">
+            <img src="../../public/images/cbs3.jpeg" alt="Nadia S — Brand Manager" class="team-card__avatar">
+            <p class="team-card__name">Nadia S.</p>
+            <p class="team-card__role">Brand Manager</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section--sm">
+      <div class="container text-center">
+        <h2>Ready to Find Your Style?</h2>
+        <p style="color:var(--color-muted);margin-block:1rem 2rem">Browse our latest collection and discover pieces made for you.</p>
+        <a href="shop.html" class="btn btn--accent">Shop the Collection</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand-name">Cloth<span>Brand</span></p>
+          <p class="footer__tagline">Effortlessly stylish clothing for the modern wardrobe.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Shop</p>
+          <ul class="footer__links">
+            <li><a href="shop.html?category=men">Men</a></li>
+            <li><a href="shop.html?category=women">Women</a></li>
+            <li><a href="shop.html?category=accessories">Accessories</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Company</p>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Newsletter</p>
+          <form class="newsletter-form" onsubmit="return false">
+            <input type="email" class="newsletter-input" placeholder="Your email" aria-label="Email address">
+            <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 ClothBrand. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

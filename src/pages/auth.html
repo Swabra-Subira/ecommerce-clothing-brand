@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign in or create an account — Clothing Brand">
+  <title>Sign In — Clothing Brand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo">Cloth<span>Brand</span></a>
+        <ul class="navbar__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar__actions">
+          <a href="cart.html" class="cart-btn" aria-label="Shopping cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-badge hidden" aria-live="polite">0</span>
+          </a>
+          <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i> Cart</a>
+  </div>
+
+  <main>
+    <div class="auth-wrapper">
+      <div class="auth-card">
+
+        <!-- Tabs -->
+        <div class="tabs" role="tablist">
+          <button class="tab-btn active" id="tab-login-btn" data-tab="tab-login"
+                  role="tab" aria-selected="true">Sign In</button>
+          <button class="tab-btn" id="tab-signup-btn" data-tab="tab-signup"
+                  role="tab" aria-selected="false">Create Account</button>
+        </div>
+
+        <!-- LOGIN -->
+        <div id="tab-login" class="tab-panel active" role="tabpanel">
+          <p class="subtitle">Welcome back. Sign in to your account.</p>
+          <form id="login-form" novalidate>
+            <div class="form-group">
+              <label for="login-email">Email Address *</label>
+              <input type="email" id="login-email" class="form-control" required
+                     placeholder="you@example.com" autocomplete="email">
+              <p class="form-error" id="login-email-err">Please enter a valid email.</p>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password *</label>
+              <input type="password" id="login-password" class="form-control" required
+                     placeholder="Your password" autocomplete="current-password">
+              <p class="form-error" id="login-password-err">Please enter your password.</p>
+            </div>
+            <div class="flex-between" style="margin-bottom:1.5rem">
+              <label style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;cursor:pointer">
+                <input type="checkbox" style="accent-color:var(--color-accent)"> Remember me
+              </label>
+              <a href="#" style="font-size:.85rem;color:var(--color-accent)">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn btn--accent btn--full">Sign In</button>
+          </form>
+          <p class="auth-switch">Don't have an account? <a href="#" id="go-signup">Create one</a></p>
+        </div>
+
+        <!-- SIGN UP -->
+        <div id="tab-signup" class="tab-panel" role="tabpanel">
+          <p class="subtitle">Create your free account.</p>
+          <form id="signup-form" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="signup-first">First Name *</label>
+                <input type="text" id="signup-first" class="form-control" required
+                       placeholder="Jane" autocomplete="given-name">
+                <p class="form-error" id="signup-first-err">Required.</p>
+              </div>
+              <div class="form-group">
+                <label for="signup-last">Last Name *</label>
+                <input type="text" id="signup-last" class="form-control" required
+                       placeholder="Doe" autocomplete="family-name">
+                <p class="form-error" id="signup-last-err">Required.</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="signup-email">Email Address *</label>
+              <input type="email" id="signup-email" class="form-control" required
+                     placeholder="you@example.com" autocomplete="email">
+              <p class="form-error" id="signup-email-err">Please enter a valid email.</p>
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Password *</label>
+              <input type="password" id="signup-password" class="form-control" required
+                     placeholder="Min. 8 characters" autocomplete="new-password" minlength="8">
+              <p class="form-error" id="signup-password-err">Password must be at least 8 characters.</p>
+            </div>
+            <div class="form-group">
+              <label for="signup-confirm">Confirm Password *</label>
+              <input type="password" id="signup-confirm" class="form-control" required
+                     placeholder="Repeat your password" autocomplete="new-password">
+              <p class="form-error" id="signup-confirm-err">Passwords do not match.</p>
+            </div>
+            <button type="submit" class="btn btn--accent btn--full">Create Account</button>
+          </form>
+          <p class="auth-switch">Already have an account? <a href="#" id="go-login">Sign in</a></p>
+        </div>
+
+        <!-- v2 notice -->
+        <p class="auth-notice">
+          <i class="fa-solid fa-circle-info"></i>
+          Full authentication (backend + sessions) is coming in v2.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <script type="module">
+    import { updateCartBadge } from "../js/cart.js";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      updateCartBadge();
+
+      // Mobile menu
+      const hamburger = document.querySelector(".hamburger");
+      const mobileNav = document.querySelector(".mobile-nav");
+      if (hamburger && mobileNav) {
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("open");
+          mobileNav.classList.toggle("open");
+        });
+      }
+
+      // Tab switching
+      function switchTab(tabId) {
+        document.querySelectorAll(".tab-btn").forEach(b => {
+          b.classList.toggle("active", b.dataset.tab === tabId);
+          b.setAttribute("aria-selected", b.dataset.tab === tabId);
+        });
+        document.querySelectorAll(".tab-panel").forEach(p => {
+          p.classList.toggle("active", p.id === tabId);
+        });
+      }
+
+      document.querySelectorAll(".tab-btn").forEach(btn => {
+        btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+      });
+
+      document.getElementById("go-signup")?.addEventListener("click", e => { e.preventDefault(); switchTab("tab-signup"); });
+      document.getElementById("go-login")?.addEventListener("click",  e => { e.preventDefault(); switchTab("tab-login"); });
+
+      // Login form
+      document.getElementById("login-form").addEventListener("submit", e => {
+        e.preventDefault();
+        let valid = true;
+        ["login-email","login-password"].forEach(id => {
+          const f = document.getElementById(id);
+          const err = document.getElementById(`${id}-err`);
+          if (!f.value.trim()) {
+            f.classList.add("error"); err?.classList.add("visible"); valid = false;
+          } else {
+            f.classList.remove("error"); err?.classList.remove("visible");
+          }
+        });
+        if (valid) alert("Login flow will be available in v2. Stay tuned!");
+      });
+
+      // Sign-up form
+      document.getElementById("signup-form").addEventListener("submit", e => {
+        e.preventDefault();
+        let valid = true;
+        ["signup-first","signup-last","signup-email","signup-password","signup-confirm"].forEach(id => {
+          const f = document.getElementById(id);
+          const err = document.getElementById(`${id}-err`);
+          if (!f.value.trim()) {
+            f.classList.add("error"); err?.classList.add("visible"); valid = false;
+          } else {
+            f.classList.remove("error"); err?.classList.remove("visible");
+          }
+        });
+
+        // Password length
+        const pw = document.getElementById("signup-password");
+        if (pw.value.length > 0 && pw.value.length < 8) {
+          pw.classList.add("error");
+          document.getElementById("signup-password-err").classList.add("visible");
+          valid = false;
+        }
+
+        // Password match
+        const confirm = document.getElementById("signup-confirm");
+        const matchErr = document.getElementById("signup-confirm-err");
+        if (pw.value !== confirm.value) {
+          confirm.classList.add("error"); matchErr.classList.add("visible"); valid = false;
+        } else {
+          confirm.classList.remove("error"); matchErr.classList.remove("visible");
+        }
+
+        if (valid) alert("Account creation will be available in v2. Stay tuned!");
+      });
+    });
+  </script>
+</body>
+</html>

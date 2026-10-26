@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Clothing Brand — Get in touch with our team.">
+  <title>Contact — Clothing Brand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo">Cloth<span>Brand</span></a>
+        <ul class="navbar__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar__actions">
+          <a href="cart.html" class="cart-btn" aria-label="Shopping cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-badge hidden" aria-live="polite">0</span>
+          </a>
+          <a href="auth.html" class="btn btn--outline btn--sm">Sign In</a>
+          <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i> Cart</a>
+    <a href="auth.html">Sign In</a>
+  </div>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you — reach out anytime.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout">
+          <!-- Contact form -->
+          <div>
+            <div class="checkout-section">
+              <h3>Send a Message</h3>
+
+              <!-- Success alert (hidden by default) -->
+              <div class="alert alert--success" id="contact-success" role="alert" style="display:none">
+                <i class="fa-solid fa-circle-check"></i>
+                Thank you! Your message has been received. We'll get back to you within 24 hours.
+              </div>
+
+              <form id="contact-form" novalidate>
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="contact-name">Your Name *</label>
+                    <input type="text" id="contact-name" class="form-control" required placeholder="Jane Doe">
+                    <p class="form-error" id="contact-name-err">Please enter your name.</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-email">Email Address *</label>
+                    <input type="email" id="contact-email" class="form-control" required placeholder="you@example.com">
+                    <p class="form-error" id="contact-email-err">Please enter a valid email.</p>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="contact-subject">Subject *</label>
+                  <input type="text" id="contact-subject" class="form-control" required placeholder="How can we help?">
+                  <p class="form-error" id="contact-subject-err">Please enter a subject.</p>
+                </div>
+                <div class="form-group">
+                  <label for="contact-message">Message *</label>
+                  <textarea id="contact-message" class="form-control" rows="6" required
+                            placeholder="Tell us more…"></textarea>
+                  <p class="form-error" id="contact-message-err">Please enter your message.</p>
+                </div>
+                <button type="submit" class="btn btn--accent">
+                  <i class="fa-solid fa-paper-plane"></i> Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Contact info cards -->
+          <aside>
+            <div class="info-card">
+              <div class="info-card__icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <p class="info-card__label">Email</p>
+                <p class="info-card__value">hello@clothbrand.com</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <p class="info-card__label">Phone</p>
+                <p class="info-card__value">+256 700 000 000</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <p class="info-card__label">Location</p>
+                <p class="info-card__value">Kampala, Uganda</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card__icon"><i class="fa-solid fa-clock"></i></div>
+              <div>
+                <p class="info-card__label">Business Hours</p>
+                <p class="info-card__value">Mon – Fri, 9am – 6pm EAT</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand-name">Cloth<span>Brand</span></p>
+          <p class="footer__tagline">Effortlessly stylish clothing for the modern wardrobe.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Shop</p>
+          <ul class="footer__links">
+            <li><a href="shop.html?category=men">Men</a></li>
+            <li><a href="shop.html?category=women">Women</a></li>
+            <li><a href="shop.html?category=accessories">Accessories</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Company</p>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Newsletter</p>
+          <form class="newsletter-form" onsubmit="return false">
+            <input type="email" class="newsletter-input" placeholder="Your email" aria-label="Email address">
+            <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 ClothBrand. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { updateCartBadge } from "../js/cart.js";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      updateCartBadge();
+
+      // Mobile menu
+      const hamburger = document.querySelector(".hamburger");
+      const mobileNav = document.querySelector(".mobile-nav");
+      if (hamburger && mobileNav) {
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("open");
+          mobileNav.classList.toggle("open");
+        });
+      }
+
+      // Contact form
+      const form    = document.getElementById("contact-form");
+      const success = document.getElementById("contact-success");
+
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        let valid = true;
+        const fields = ["contact-name", "contact-email", "contact-subject", "contact-message"];
+
+        fields.forEach(id => {
+          const field = document.getElementById(id);
+          const err   = document.getElementById(`${id}-err`);
+          if (!field.value.trim()) {
+            field.classList.add("error");
+            if (err) err.classList.add("visible");
+            valid = false;
+          } else {
+            field.classList.remove("error");
+            if (err) err.classList.remove("visible");
+          }
+        });
+
+        if (!valid) return;
+
+        form.style.display = "none";
+        success.style.display = "flex";
+        success.style.alignItems = "center";
+        success.style.gap = "0.5rem";
+      });
+    });
+  </script>
+</body>
+</html>

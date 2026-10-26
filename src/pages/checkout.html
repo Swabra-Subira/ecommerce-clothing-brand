@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Checkout — Clothing Brand">
+  <title>Checkout — Clothing Brand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo">Cloth<span>Brand</span></a>
+        <ul class="navbar__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar__actions">
+          <a href="cart.html" class="cart-btn" aria-label="Shopping cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-badge hidden" aria-live="polite">0</span>
+          </a>
+          <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html">Cart</a>
+  </div>
+
+  <main>
+    <div class="page-header">
+      <div class="container"><h1>Checkout</h1></div>
+    </div>
+
+    <div class="container">
+      <!-- Confirmation box (shown after order placed) -->
+      <div class="confirmation-box" id="confirmation-box" role="alert">
+        <div class="icon"><i class="fa-solid fa-circle-check"></i></div>
+        <h2>Order Placed!</h2>
+        <p>Thank you for your purchase. You'll receive a confirmation email shortly.</p>
+        <a href="shop.html" class="btn btn--accent" style="margin-top:2rem">Continue Shopping</a>
+      </div>
+
+      <!-- Checkout form -->
+      <div id="checkout-form-wrap" class="checkout-layout">
+        <!-- Left: forms -->
+        <div>
+          <form id="checkout-form" novalidate>
+            <!-- Shipping -->
+            <div class="checkout-section">
+              <h3><i class="fa-solid fa-truck-fast" style="color:var(--color-accent);margin-right:.5rem"></i> Shipping Information</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="first-name">First Name *</label>
+                  <input type="text" id="first-name" class="form-control" required autocomplete="given-name">
+                  <p class="form-error" id="first-name-err">Please enter your first name.</p>
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name *</label>
+                  <input type="text" id="last-name" class="form-control" required autocomplete="family-name">
+                  <p class="form-error" id="last-name-err">Please enter your last name.</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" class="form-control" required autocomplete="email">
+                <p class="form-error" id="email-err">Please enter a valid email.</p>
+              </div>
+              <div class="form-group">
+                <label for="address">Street Address *</label>
+                <input type="text" id="address" class="form-control" required autocomplete="street-address">
+                <p class="form-error" id="address-err">Please enter your address.</p>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="city">City *</label>
+                  <input type="text" id="city" class="form-control" required autocomplete="address-level2">
+                  <p class="form-error" id="city-err">Please enter your city.</p>
+                </div>
+                <div class="form-group">
+                  <label for="postal">Postal Code *</label>
+                  <input type="text" id="postal" class="form-control" required autocomplete="postal-code">
+                  <p class="form-error" id="postal-err">Please enter your postal code.</p>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="country">Country *</label>
+                <select id="country" class="form-control" required autocomplete="country">
+                  <option value="">Select country…</option>
+                  <option>Uganda</option>
+                  <option>Kenya</option>
+                  <option>Tanzania</option>
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>Canada</option>
+                  <option>Other</option>
+                </select>
+                <p class="form-error" id="country-err">Please select a country.</p>
+              </div>
+            </div>
+
+            <!-- Payment -->
+            <div class="checkout-section">
+              <h3><i class="fa-solid fa-credit-card" style="color:var(--color-accent);margin-right:.5rem"></i> Payment</h3>
+              <p style="font-size:0.85rem;color:var(--color-muted);margin-bottom:1.5rem">
+                <i class="fa-solid fa-lock"></i> Secure payment. Card details are not stored. (Demo UI only)
+              </p>
+              <div class="form-group">
+                <label for="card-number">Card Number *</label>
+                <input type="text" id="card-number" class="form-control" placeholder="1234 5678 9012 3456"
+                       maxlength="19" required autocomplete="cc-number">
+                <p class="form-error" id="card-number-err">Please enter a valid card number.</p>
+              </div>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="card-expiry">Expiry *</label>
+                  <input type="text" id="card-expiry" class="form-control" placeholder="MM / YY"
+                         maxlength="7" required autocomplete="cc-exp">
+                  <p class="form-error" id="card-expiry-err">Please enter expiry date.</p>
+                </div>
+                <div class="form-group">
+                  <label for="card-cvv">CVV *</label>
+                  <input type="text" id="card-cvv" class="form-control" placeholder="123"
+                         maxlength="4" required autocomplete="cc-csc">
+                  <p class="form-error" id="card-cvv-err">Please enter CVV.</p>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" id="place-order-btn" class="btn btn--accent btn--full" disabled>
+              <i class="fa-solid fa-lock"></i> Place Order
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: order summary -->
+        <aside class="order-summary" aria-label="Order summary">
+          <h3>Order Summary</h3>
+          <div id="checkout-items" style="margin-bottom:1rem"></div>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="co-subtotal">$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>$5.00</span>
+          </div>
+          <div class="summary-row summary-row--total">
+            <span>Total</span>
+            <span id="co-total">$5.00</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__bottom" style="border-top:none;padding-top:2rem;opacity:0.5;font-size:0.8rem;text-align:center;display:block">
+        &copy; 2026 ClothBrand. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { getCart, getSubtotal, clearCart, updateCartBadge } from "../js/cart.js";
+
+    const SHIPPING = 5;
+
+    document.addEventListener("DOMContentLoaded", () => {
+      updateCartBadge();
+      renderSummary();
+      bindFormValidation();
+
+      // mobile menu
+      const hamburger = document.querySelector(".hamburger");
+      const mobileNav = document.querySelector(".mobile-nav");
+      if (hamburger && mobileNav) {
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("open");
+          mobileNav.classList.toggle("open");
+        });
+      }
+    });
+
+    function renderSummary() {
+      const cart = getCart();
+      const itemsEl = document.getElementById("checkout-items");
+      itemsEl.innerHTML = cart.map(item => `
+        <div class="summary-row" style="align-items:flex-start">
+          <span style="flex:1">${item.name} <span style="color:var(--color-muted);font-size:0.8rem">×${item.qty}</span></span>
+          <span>$${(item.price * item.qty).toFixed(2)}</span>
+        </div>`).join("") || "<p style='color:var(--color-muted);font-size:0.85rem'>Cart is empty.</p>";
+
+      const sub = getSubtotal();
+      document.getElementById("co-subtotal").textContent = `$${sub.toFixed(2)}`;
+      document.getElementById("co-total").textContent    = `$${(sub + SHIPPING).toFixed(2)}`;
+    }
+
+    function bindFormValidation() {
+      const form = document.getElementById("checkout-form");
+      const btn  = document.getElementById("place-order-btn");
+      const requiredFields = form.querySelectorAll("[required]");
+
+      // Enable button only when all fields have a value
+      function checkForm() {
+        const allFilled = [...requiredFields].every(f => f.value.trim() !== "");
+        btn.disabled = !allFilled;
+      }
+      form.addEventListener("input", checkForm);
+
+      // Format card number
+      document.getElementById("card-number").addEventListener("input", function() {
+        this.value = this.value.replace(/\D/g, "").replace(/(.{4})/g, "$1 ").trim().slice(0, 19);
+      });
+
+      // Format expiry
+      document.getElementById("card-expiry").addEventListener("input", function() {
+        this.value = this.value.replace(/\D/g, "").replace(/^(\d{2})(\d)/, "$1 / $2").slice(0, 7);
+      });
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let valid = true;
+
+        requiredFields.forEach(field => {
+          const errEl = document.getElementById(`${field.id}-err`);
+          if (!field.value.trim()) {
+            field.classList.add("error");
+            if (errEl) errEl.classList.add("visible");
+            valid = false;
+          } else {
+            field.classList.remove("error");
+            if (errEl) errEl.classList.remove("visible");
+          }
+        });
+
+        if (!valid) return;
+
+        // Success
+        clearCart();
+        document.getElementById("checkout-form-wrap").style.display = "none";
+        document.getElementById("confirmation-box").classList.add("visible");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+  </script>
+</body>
+</html>

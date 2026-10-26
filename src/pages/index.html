@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clothing Brand — Discover effortlessly stylish clothing for every occasion. Shop men's, women's and accessories.">
+  <title>Clothing Brand — Home</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <!-- ── NAVBAR ─────────────────────────────────────────── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo">Cloth<span>Brand</span></a>
+
+        <ul class="navbar__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <div class="navbar__actions">
+          <a href="cart.html" class="cart-btn" aria-label="Shopping cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-badge hidden" aria-live="polite">0</span>
+          </a>
+          <a href="auth.html" class="btn btn--outline btn--sm">Sign In</a>
+          <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i> Cart</a>
+    <a href="auth.html">Sign In</a>
+  </div>
+
+  <main>
+    <!-- ── HERO ───────────────────────────────────────────── -->
+    <section class="hero" aria-label="Hero banner">
+      <div class="hero__bg" role="img" aria-label="Fashion model in stylish clothing"></div>
+      <div class="container">
+        <div class="hero__content">
+          <p class="hero__label">New Collection 2026</p>
+          <h1 class="hero__title">Style That Speaks for Itself</h1>
+          <p class="hero__subtitle">
+            Effortlessly crafted pieces for the modern wardrobe.<br>
+            Quality fabrics. Timeless silhouettes.
+          </p>
+          <div class="flex gap-sm flex-wrap">
+            <a href="shop.html" class="btn btn--accent">Shop Now</a>
+            <a href="about.html" class="btn btn--outline" style="border-color:#fff;color:#fff">Our Story</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CATEGORY STRIP ─────────────────────────────────── -->
+    <section class="category-strip section--sm" aria-label="Shop by category">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Shop by Category</h2>
+          <p>Find your style</p>
+        </div>
+        <div class="category-strip__grid">
+          <a href="shop.html?category=men" class="category-card" aria-label="Shop Men's clothing">
+            <img src="../../public/images/cbs4.jpeg" alt="Men's clothing" class="category-card__img">
+            <div class="category-card__overlay">
+              <span class="category-card__label">Men</span>
+            </div>
+          </a>
+          <a href="shop.html?category=women" class="category-card" aria-label="Shop Women's clothing">
+            <img src="../../public/images/cbs3.jpeg" alt="Women's clothing" class="category-card__img">
+            <div class="category-card__overlay">
+              <span class="category-card__label">Women</span>
+            </div>
+          </a>
+          <a href="shop.html?category=accessories" class="category-card" aria-label="Shop Accessories">
+            <img src="../../public/images/cbs6.jpeg" alt="Fashion accessories" class="category-card__img">
+            <div class="category-card__overlay">
+              <span class="category-card__label">Accessories</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FEATURED PRODUCTS ──────────────────────────────── -->
+    <section class="section" aria-label="Featured products">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Featured Pieces</h2>
+          <p>Hand-picked selections from our latest collection</p>
+        </div>
+        <div class="product-grid product-grid--4" id="featured-grid">
+          <!-- Populated by main.js -->
+        </div>
+        <div class="text-center mt-xl">
+          <a href="shop.html" class="btn btn--outline">View All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROMO BANNER ───────────────────────────────────── -->
+    <section class="promo-banner" aria-label="Promotional banner">
+      <div class="promo-banner__bg" role="img" aria-label="Fashion collection promo banner"></div>
+      <div class="container">
+        <div class="promo-banner__content">
+          <h2>New Season. New You.</h2>
+          <p>Up to 30% off selected styles. Limited time only.</p>
+          <a href="shop.html" class="btn btn--accent">Explore the Sale</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand-name">Cloth<span>Brand</span></p>
+          <p class="footer__tagline">Effortlessly stylish clothing for the modern wardrobe.</p>
+          <div class="footer__socials" aria-label="Social media links">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Shop</p>
+          <ul class="footer__links">
+            <li><a href="shop.html?category=men">Men</a></li>
+            <li><a href="shop.html?category=women">Women</a></li>
+            <li><a href="shop.html?category=accessories">Accessories</a></li>
+            <li><a href="shop.html">New Arrivals</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Company</p>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Returns</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Stay in the Loop</p>
+          <p style="font-size:0.85rem;opacity:0.7;margin-bottom:1rem;">
+            Get new arrivals and exclusive offers straight to your inbox.
+          </p>
+          <form class="newsletter-form" aria-label="Newsletter signup" onsubmit="return false">
+            <input type="email" class="newsletter-input" placeholder="Your email" aria-label="Email address">
+            <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 ClothBrand. All rights reserved.</span>
+        <span>Built with HTML, CSS &amp; JS</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS (ES modules) -->
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Your shopping cart — Clothing Brand">
+  <title>Cart — Clothing Brand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo">Cloth<span>Brand</span></a>
+        <ul class="navbar__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar__actions">
+          <a href="cart.html" class="cart-btn" aria-label="Shopping cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-badge hidden" aria-live="polite">0</span>
+          </a>
+          <a href="auth.html" class="btn btn--outline btn--sm">Sign In</a>
+          <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i> Cart</a>
+    <a href="auth.html">Sign In</a>
+  </div>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <h1>Your Cart</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Empty state -->
+      <div id="cart-empty" class="empty-state" style="display:none">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <h3>Your cart is empty</h3>
+        <p>Looks like you haven't added anything yet.</p>
+        <a href="shop.html" class="btn btn--primary" style="margin-top:1.5rem">Continue Shopping</a>
+      </div>
+
+      <!-- Cart content -->
+      <div id="cart-content" class="cart-layout">
+        <!-- Items table -->
+        <div>
+          <table class="cart-table" id="cart-table" aria-label="Cart items">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+                <th scope="col"><span class="sr-only">Remove</span></th>
+              </tr>
+            </thead>
+            <tbody id="cart-body">
+              <!-- Populated by cart-page.js -->
+            </tbody>
+          </table>
+          <div class="flex-between mt-lg">
+            <a href="shop.html" class="btn btn--outline btn--sm">
+              <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+            </a>
+          </div>
+        </div>
+
+        <!-- Order summary -->
+        <aside class="order-summary" aria-label="Order summary">
+          <h3>Order Summary</h3>
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="subtotal">$0.00</span>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span id="shipping">$5.00</span>
+          </div>
+          <div class="summary-row summary-row--total">
+            <span>Total</span>
+            <span id="total">$5.00</span>
+          </div>
+          <a href="checkout.html" class="btn btn--accent btn--full" style="margin-top:1.5rem">
+            Proceed to Checkout
+          </a>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand-name">Cloth<span>Brand</span></p>
+          <p class="footer__tagline">Effortlessly stylish clothing for the modern wardrobe.</p>
+          <div class="footer__socials">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div>
+          <p class="footer__heading">Shop</p>
+          <ul class="footer__links">
+            <li><a href="shop.html?category=men">Men</a></li>
+            <li><a href="shop.html?category=women">Women</a></li>
+            <li><a href="shop.html?category=accessories">Accessories</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Company</p>
+          <ul class="footer__links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__heading">Newsletter</p>
+          <form class="newsletter-form" onsubmit="return false">
+            <input type="email" class="newsletter-input" placeholder="Your email" aria-label="Email address">
+            <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 ClothBrand. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { getCart, updateQty, removeFromCart, getSubtotal, updateCartBadge } from "../js/cart.js";
+    import { initMobileMenu } from "../js/main.js";
+
+    const SHIPPING = 5;
+
+    function render() {
+      updateCartBadge();
+      const cart = getCart();
+      const empty   = document.getElementById("cart-empty");
+      const content = document.getElementById("cart-content");
+
+      if (cart.length === 0) {
+        empty.style.display   = "block";
+        content.style.display = "none";
+        return;
+      }
+      empty.style.display   = "none";
+      content.style.display = "grid";
+
+      const tbody = document.getElementById("cart-body");
+      tbody.innerHTML = cart.map((item, i) => `
+        <tr>
+          <td>
+            <div class="cart-item__product">
+              <img src="${item.image}" alt="${item.name}" class="cart-item__img">
+              <div>
+                <strong>${item.name}</strong>
+                <div class="cart-item__meta">Size: ${item.size} · Color: ${item.color}</div>
+              </div>
+            </div>
+          </td>
+          <td>$${item.price.toFixed(2)}</td>
+          <td>
+            <div class="qty-stepper">
+              <button onclick="changeQty(${i}, ${item.qty - 1})" aria-label="Decrease quantity">−</button>
+              <input type="number" value="${item.qty}" min="1"
+                     onchange="changeQty(${i}, parseInt(this.value)||1)"
+                     aria-label="Quantity for ${item.name}">
+              <button onclick="changeQty(${i}, ${item.qty + 1})" aria-label="Increase quantity">+</button>
+            </div>
+          </td>
+          <td><strong>$${(item.price * item.qty).toFixed(2)}</strong></td>
+          <td>
+            <button class="remove-btn" onclick="remove(${i})" aria-label="Remove ${item.name} from cart">
+              Remove
+            </button>
+          </td>
+        </tr>
+      `).join("");
+
+      const subtotal = getSubtotal();
+      document.getElementById("subtotal").textContent = `$${subtotal.toFixed(2)}`;
+      document.getElementById("total").textContent    = `$${(subtotal + SHIPPING).toFixed(2)}`;
+    }
+
+    window.changeQty = (i, qty) => { updateQty(i, qty); render(); };
+    window.remove    = (i)      => { removeFromCart(i);  render(); };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      render();
+      // mobile menu via inline init
+      const hamburger = document.querySelector(".hamburger");
+      const mobileNav = document.querySelector(".mobile-nav");
+      if (hamburger && mobileNav) {
+        hamburger.addEventListener("click", () => {
+          hamburger.classList.toggle("open");
+          mobileNav.classList.toggle("open");
+        });
+      }
+    });
+  </script>
+</body>
+</html>
